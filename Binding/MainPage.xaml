@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Binding.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <StackLayout Margin="15" HorizontalOptions="CenterAndExpand">
+        <Label
+            BindingContext="{x:Reference opacitySlider}"
+            FontSize="15"
+            HorizontalOptions="CenterAndExpand"
+            Opacity="{Binding Value}"
+            Text="hello" />
+        <Button x:Name="btn" />
+        <Slider
+            x:Name="opacitySlider"
+            Maximum="1.0"
+            Minimum="0.0" />
+        <Slider
+            x:Name="heightSlider"
+            BindingContext="{x:Reference btn}"
+            Maximum="400"
+            Minimum="100"
+            Value="{Binding HeightRequest}" />
+    </StackLayout>
+
+</ContentPage>

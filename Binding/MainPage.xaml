@@ -2,10 +2,12 @@
 <ContentPage
     x:Class="Binding.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Models="clr-namespace:Binding.Models"
+    x:DataType="Models:Student">
 
     <StackLayout Margin="15" HorizontalOptions="CenterAndExpand">
-        <Label
+        <!--<Label
             BindingContext="{x:Reference opacitySlider}"
             FontSize="15"
             HorizontalOptions="CenterAndExpand"
@@ -21,7 +23,19 @@
             BindingContext="{x:Reference btn}"
             Maximum="400"
             Minimum="100"
-            Value="{Binding HeightRequest}" />
+            Value="{Binding HeightRequest}" />-->
+        <Label
+            x:Name="name"
+            FontSize="20"
+            Text="{Binding Name}" />
+        <Label
+            x:Name="age"
+            FontSize="15"
+            Text="{Binding Age}" />
+        <Button
+            x:Name="btn_changename"
+            Clicked="ChangeName"
+            Text="שנה שם לזיו" />
     </StackLayout>
 
 </ContentPage>
